@@ -1,0 +1,261 @@
+body {
+    font: 14px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#airspace {
+    margin:10px;
+    padding:0px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:300px;
+    bottom:0px;
+    border:1px solid #d6d6d6;
+    overflow:hidden;
+}
+
+#airspace .waypoint {
+    position:absolute;
+    width:16px;
+    height:16px;
+    
+    /* Centre the waypoint marker on it's actual location */
+    margin-left:-8px;
+    margin-bottom:-8px;
+    
+    z-index:1;
+}
+
+#airspace .waypoint.simple {
+    background-color:red;
+    text-indent:20px;
+    line-height:16px;
+    font-size:12px;
+}
+
+#airspace .waypoint.edge {
+    background-color:blue;
+    overflow:hidden;
+    text-indent:999px;
+}
+
+#airspace .flight {
+    position:absolute;
+    background-image:url('../images/plane.png');
+    background-repeat:no-repeat;
+    width:24px;
+    height:24px;
+    
+    /* Centre the flight marker on it's actual location */
+    margin-left:-12px;
+    margin-bottom:-12px;
+    
+    z-index:2;
+}
+
+#airspace .flight div {
+    margin-left:30px;
+}
+
+#airspace .flight.active {
+    background-color:#DCDCDC; /* a very light grey */
+}
+
+#airspace .flight.flagged {
+    background-color:orange;
+}
+
+#airspace .flight.active.flagged {
+    background-color:#D2691E; /* a dark orange colour */
+}
+
+#controls {
+    margin:0px;
+    padding:10px;
+    position:absolute;
+    top:10px;
+    right:10px;
+    bottom:110px;
+    width:280px;
+    border:1px solid #d6d6d6;
+    border-left:none;
+    border-bottom:none;
+}
+
+#controls #current-flight {
+    display:none; /* Will be shown when needed using the style attribute */
+}
+
+#current-flight td, #current-flight tr, #current-flight table {
+    padding-left:0px;
+    border-spacing:0px;
+    padding-right:8px;
+    padding-bottom:2px;
+}
+
+#target-altitude-parent, #target-speed-parent, #target-heading-parent {
+    display:none;
+}
+
+.counter-container {
+    height:20px;
+    background-color:#f6f6f6;
+    padding-top:2px;
+    padding-bottom:2px;
+    position:relative;
+}
+
+.counter-actual {
+    height:24px;
+    top:0px;
+    background-color:#d6d6d6;
+    position:absolute;
+    z-index:2;
+}
+
+.counter-numbers {
+    z-index:3;
+    position:absolute;
+    top:0px;
+    width:100%;
+    display:block;   
+    text-align:center;
+    line-height:24px;
+}
+
+.flight-plan-item.active {
+    font-weight:bold;
+}
+
+#flight-plan-label {
+    margin-top:8px;
+    display:block;
+}
+
+ul#flight-plan {
+    margin-top:4px;
+    margin-bottom:20px;
+    padding-left:18px;
+}
+
+#controls h1 {
+    margin-top:0px;
+}
+
+#controls button {
+    width:88px;
+    margin-left:8px;
+    display:block;
+    float:left;
+    font-size:11px;
+}
+
+#controls button:first-child {
+    clear:left;
+}
+
+button#turn-left, button#set-heading {
+    margin-left:0px;
+}
+
+button#climb, button#descend {
+    margin-left:96px;
+}
+
+button#turn-right {
+    margin-left:104px;
+}
+
+button#set-altitude, button#set-heading {
+    width:136px;
+    margin-top:10px;
+}
+
+#timer {
+    position:absolute;
+    bottom:40px;
+    right:10px;
+    width:280px;
+    border-right:1px solid #d6d6d6;
+    height:50px;
+    padding:10px;
+    text-align:center;
+    font-size:32px;
+    font-family:monospace;
+}
+
+#menu {
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    width:280px;
+    height:20px;
+    padding:10px;
+    text-align:center;
+    border-bottom:1px solid #d6d6d6;
+    border-right:1px solid #d6d6d6;
+    color:#d6d6d6;
+}
+
+#menu a, #game-over-box a {
+    color:#444;
+}
+
+#game-over-box {
+    width:400px;
+    height:140px;
+    z-index:10;
+    display:block;
+    position:absolute;
+    left:50%;
+    margin-left:-200px;
+    top:50%;
+    margin-top:-70px;
+    
+    text-align:center;
+    border:1px solid #d6d6d6;
+    background-color: white;
+    
+    display:none;
+}
+
+button {
+    background: #eee; /* Old browsers */
+    background: #eee -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
+    background: #eee -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
+    background: #eee -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
+    background: #eee -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
+    background: #eee -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
+    background: #eee linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
+    border: 1px solid #aaa;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: #444;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(255, 255, 255, .75);
+    cursor: pointer;
+    margin-bottom: 10px;
+    line-height: normal;
+    padding: 8px 10px;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
+
+button:hover {
+    color: #222;
+    background: #ddd; /* Old browsers */
+    background: #ddd -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%); /* FF3.6+ */
+    background: #ddd -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))); /* Chrome,Safari4+ */
+    background: #ddd -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Chrome10+,Safari5.1+ */
+    background: #ddd -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Opera11.10+ */
+    background: #ddd -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* IE10+ */
+    background: #ddd linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* W3C */
+    border: 1px solid #888;
+    border-top: 1px solid #aaa;
+    border-left: 1px solid #aaa; 
+}

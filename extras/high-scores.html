@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    
+    <title>High Scores | Don't Crash</title>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="/stylesheets/base.css">
+	<link rel="stylesheet" href="/stylesheets/skeleton.css">
+    
+	<link rel="stylesheet" href="/stylesheets/menu.css">
+    
+    <script type="text/javascript" src="/brython.js"></script>
+</head>
+
+<body onload="brython()">
+    
+    <div class="container"><div class="sixteen columns">
+    
+    <div id="header">
+        <h1>High Scores</h1>
+    </div>
+    
+    <div id="scores" class="main">
+        <!-- Scores written in here by Python -->
+    </div>
+    
+    <div id="menu">
+        <div class="eight columns offset-by-four alpha">
+            <ul>
+                <li><a id="clear-scores" class="full-width button" href="/high-scores.html">Clear High Scores</a></li>
+                <li><a class="full-width button" href="/">Back to Main Menu</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    </div></div>
+        
+    <script type="text/python" src="/code/page-high_scores.py"></script>
+        
+</body>
+</html>

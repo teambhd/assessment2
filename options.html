@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    
+    <title>Options | Don't Crash</title>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+    
+	<link rel="stylesheet" href="stylesheets/menu.css">
+    
+    <script type="text/javascript" src="brython.js"></script>
+</head>
+
+<body onload="brython()">
+    
+    <div class="container"><div class="sixteen columns">
+    
+    <div id="header">
+        <h1>Options</h1>
+    </div>
+    
+    <div id="message" class="message" style="display:none"></div>
+    
+    <div class="main">
+        <table id="options-table">
+            <!-- Options will be written in here by the Python code -->
+        </table>
+    </div>
+    
+    <div id="menu">
+        <div class="eight columns offset-by-four alpha">
+            <ul>
+                <li><a id="save-button" class="full-width button" href="javascript:">Save Changes</a></li>
+                <li><a id="reset-button" class="full-width button" href="javascript:">Reset to Defaults</a></li>
+                <li><a class="full-width button" href="./">Back to Main Menu</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <script type="text/python" src="code/page-options.py"></script>
+    
+    </div></div>
+                
+</body>
+</html>

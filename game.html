@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    
+	<title>Don't Crash</title>
+    
+    <link rel="stylesheet" type="text/css" href="stylesheets/game.css" />
+    
+    <script type="text/javascript" src="brython.js"></script>
+</head>
+<body onload="brython()">
+    
+    <div id="airspace">
+        <div id="waypoints"></div>
+        <div id="flights"></div>
+    </div>
+    
+    <div id="controls">
+        
+        <div id="current-flight-placeholder">Select a flight to show information and controls</div>
+        
+        <div id="current-flight"> 
+            <h1 id="flight-code"></h1>
+            
+            <p>
+            <span id="aircraft-type"></span> (<span id="aircraft-size"></span>)
+            </p>
+            
+            <table id="properties">
+                <tr>
+                    <td>Altitude</td>
+                    <td><span id="flight-altitude"></span>m</td>
+                    <td id="target-altitude-parent">&rarr; <span id="target-altitude"></span>m</td>
+                </tr>
+                <tr>
+                    <td>Speed</td>
+                    <td><span id="flight-speed"></span>m/s</td>
+                    <td id="target-speed-parent">&rarr; <span id="target-speed"></span>m/s</td>
+                </tr>
+                <tr>
+                    <td>Heading</td>
+                    <td><span id="flight-heading"></span>&deg;</td>
+                    <td id="target-heading-parent">&rarr; <span id="target-heading"></span>&deg;</td>
+                </tr>
+            </table>
+                
+            <span>Fuel</span>
+            <div class="counter-container" id="fuel-container">
+                <div id="fuel-counter" class="counter-actual"></div>
+                <div id="fuel-numbers" class="counter-numbers"><span id="current-fuel"></span>l / <span id="max-fuel"></span>l</div>
+            </div>
+            
+            <div>
+                <span id="flight-plan-label">Flight Plan</span>
+                <ul id="flight-plan">
+                    
+                </ul>
+            </div>
+                        
+            <div>
+                <button id="climb">Climb</button>
+            </div>
+                                        
+            <div>
+                <button id="turn-left">Turn Left</button>
+                <button id="turn-right">Turn Right</button>
+            </div>
+            
+            <div>
+                <button id="descend">Descend</button>
+            </div> 
+            
+            <div>
+                <button id="set-heading">Set Heading</button>
+                <button id="set-altitude">Set Altitude</button>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div id="timer"><span id="minutes">00</span> : <span id="seconds">00</span></div>
+    
+    <div id="menu">
+        <a id="pause" href="javascript:">Pause</a> | <a href="game.html">Restart</a> | <a href="./">Quit</a>
+    </div>
+    
+    <div id="game-over-box">
+        <h1>Game Over</h1>
+        <p id="game-over-message"></p>
+        <!-- <p>Your score was <span id="final-score"></span>.</p> -->
+        <p><a href="game.html">Restart</a> | <a href="./">Quit</a></p>
+    </div>
+
+	<script type="text/python" src="code/main.py"></script>
+
+</body>
+</html>

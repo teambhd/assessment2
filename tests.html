@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    
+    <title>Automated Tests | Don't Crash</title>
+    
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+    
+	<link rel="stylesheet" href="stylesheets/menu.css">
+        
+    <script type="text/javascript" src="brython.js"></script>
+</head>
+
+<body onload="brython()">
+    
+    <div class="container"><div class="sixteen columns">
+    
+        <div id="header">
+            <h1>Automated Tests</h1>
+        </div>
+    
+        <div><textarea id="output" readonly="readonly"></textarea></div>
+    
+        <script type="text/python" src="code/test-options.py"></script>
+        <script type="text/python" src="code/test-flight.py"></script>
+        <script type="text/python" src="code/test-airspace.py"></script>
+        <!-- add more test suites here -->
+    
+        <div id="menu">
+            <div class="eight columns offset-by-four alpha">
+                <ul>
+                    <li><a class="full-width button" href="./">Back to Main Menu</a></li>
+                </ul>
+            </div>
+        </div>
+    
+    </div></div>
+        
+</body>
+</html>
